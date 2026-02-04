@@ -1,0 +1,13 @@
+from fastapi import FastAPI
+
+app = FastAPI()
+
+expenses = [
+    {"id": 1, "amount": 500},
+    {"id": 2, "amount": 1200},
+    {"id": 3, "amount": 300}
+]
+
+@app.get("/expenses/count")
+def get_expense_count():
+    return {"count": len(expenses)}
