@@ -1,0 +1,7 @@
+SELECT COUNT(*) AS student_count
+FROM (
+    SELECT student_id, AVG(marks) AS avg_marks
+    FROM students_marks
+    GROUP BY student_id
+    HAVING AVG(marks) > 60
+) t;
